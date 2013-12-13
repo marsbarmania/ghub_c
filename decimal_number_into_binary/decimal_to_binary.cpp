@@ -24,6 +24,7 @@ int to_binary(int n){
   return atoi(s.c_str());
 }
 
+
 int main(int argc, char const *argv[])
 {
   int num;
