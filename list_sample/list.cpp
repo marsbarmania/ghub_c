@@ -35,7 +35,11 @@ void removeRecord(studentCollection &sc, int num){
       // cout << "削除して(" << node->studentNum << ")" << endl;
       // cout << "Nextをいまにするよ= " << node->next->studentNum << endl;
       // cout << "Prev = " << node->prev->studentNum << endl;
+
+      // prevリストのnextが自分のnext
       node->prev->next = node->next;
+      // nextリストのprevが自分のprev
+      node->next->prev = node->prev;
       if(node->next==NULL){
         cout << "NULLだよ" << endl;
       }
@@ -95,8 +99,13 @@ int main(int argc, char const *argv[])
 
 
   removeRecord(sc,1001);
-  cout << "after ---- " << endl;
+  cout << "after remove 1001 ---- " << endl;
   show(sc);
+
+  removeRecord(sc,1012);
+  cout << "after remove 1012---- " << endl;
+  show(sc);
+
   cout << endl << endl;
 
   return 0;
