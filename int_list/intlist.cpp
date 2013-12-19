@@ -26,7 +26,7 @@ intCollection intToList(int);
 /*
   整数のリストを２つ受け取ってその和を同じ形式のリストで返す関数を書いてみよう
 */
-intCollection average(intCollection, intCollection);
+intCollection sumList(intCollection, intCollection);
 
 int listToInt(intCollection);
 
@@ -43,7 +43,7 @@ int main(int argc, char const *argv[])
 
   cout << "--- Average ---" << endl;
   intCollection x = intToList(149), y = intToList(7);
-  cout << "collection= " << average(x,y) << " result= " << listToInt(average(x,y)) << endl;;
+  cout << " result= " << listToInt(sumList(x,y)) << endl;;
 
   return 0;
 }
@@ -74,10 +74,8 @@ int listToInt(intCollection ic){
   return sum;
 }
 
-intCollection average(intCollection a, intCollection b){
-  // intに強制変換
-  int ave = (listToInt(a) + listToInt(b)) / 2;
-  return intToList(ave);
+intCollection sumList(intCollection a, intCollection b){
+  return intToList(listToInt(a) + listToInt(b));
 }
 
 intCollection intToList(int num){
