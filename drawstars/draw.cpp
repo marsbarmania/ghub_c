@@ -53,10 +53,12 @@ int main(int argc, char const *argv[])
       cout << endl;
 
       /* draw separator here */
-      for(int k=0;k<x*2-1;k++){
-        cout << "-";
+      if(n < x-1){
+        for(int k=0;k<x*2-1;k++){
+          cout << "-";
+        }
+        cout << endl;
       }
-      cout << endl;
     }
 
   return 0;
